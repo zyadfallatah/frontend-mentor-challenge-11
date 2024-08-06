@@ -9,7 +9,7 @@ const SearchInput = () => {
     >
       <img src={searchIcon} alt="search Icon" className="md:pl-6" />
       <input
-        className="w-full bg-transparent text-[13px]  placeholder:text-gray-color placeholder:dark:text-white-alt-color"
+        className="w-full bg-transparent text-[13px] placeholder:text-gray-color placeholder:dark:text-white-alt-color outline-0"
         type="text"
         placeholder="Search GitHub username…"
       />
