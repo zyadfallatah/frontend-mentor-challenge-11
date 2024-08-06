@@ -1,9 +1,18 @@
 import { Octokit } from "octokit";
 
 export type UsernameSchema = {
+  avatar_url: string;
   login: string;
-  name: string;
-  twitter_username: string;
+  public_repos: string;
+  created_at: Date; // "2011-01-25T18:44:36Z"
+  following: number;
+  followers: number;
+  bio?: string;
+  name?: string;
+  twitter_username?: string;
+  location?: string;
+  blog?: string;
+  company?: string;
 };
 
 const octokit = new Octokit({
