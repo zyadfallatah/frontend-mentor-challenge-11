@@ -17,20 +17,28 @@ const User = () => {
           alt="user profile image"
           className="size-[4.375rem] rounded-full md:size-[7.3125rem]"
         />
-        <div className="lg:flex justify-between flex-1">
-          <div>
-            <h1 className="font-bold text-[1rem] md:text-[1.625rem] text-black-alt-color dark:text-white-alt-color leading-8">
-              {user?.name}
-            </h1>
-            <h3 className="text-[.8125rem] text-blue-color mb-[.375rem]">
-              @{user?.login}
-            </h3>
+        <div className="flex-1">
+          <div className="lg:flex justify-between">
+            <div>
+              <h1 className="font-bold text-[1rem] md:text-[1.625rem] text-black-alt-color dark:text-white-alt-color leading-8">
+                {user?.name}
+              </h1>
+              <h3 className="text-[.8125rem] text-blue-color mb-[.375rem] lg:mb-5">
+                @{user?.login}
+              </h3>
+            </div>
+            <p className="text-gray-color dark:text-white-alt-color text-[15px]">
+              Joined 25 Jan 2011
+            </p>
           </div>
-          <p className="text-gray-color dark:text-white-alt-color text-[15px]">
-            Joined 25 Jan 2011
+          <p className="hidden lg:block text-blueish-gray-color dark:text-white-alt-color">
+            {user?.bio ? user.bio : "No Bio Here"}
           </p>
         </div>
       </div>
+      <p className="block lg:hidden text-blueish-gray-color dark:text-white-alt-color">
+        {user?.bio ? user.bio : "No Bio Here"}
+      </p>
     </main>
   );
 };

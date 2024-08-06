@@ -15,14 +15,12 @@ const Theme = () => {
   };
 
   useEffect(() => {
-    const isLocalThemeDefined: boolean = JSON.parse(
-      localStorage.getItem(THEME)!
-    );
+    const isLocalThemeDefined = localStorage.getItem(THEME)!;
 
     if (isLocalThemeDefined) {
-      setIsDarkMode(isLocalThemeDefined);
-      const isLocalThemeDark = isLocalThemeDefined;
-      document.body.classList.add(isLocalThemeDark ? THEME : "");
+      setIsDarkMode(JSON.parse(isLocalThemeDefined));
+      const isLocalThemeDark = JSON.parse(isLocalThemeDefined);
+      document.body.classList.add(isLocalThemeDark && THEME);
       return;
     }
 
