@@ -1,4 +1,7 @@
+import GridLayout from "../layout/GridLayout";
 import UserAccount from "./UserAccount";
+import UserStats from "./UserStats";
+
 const User = () => {
   return (
     <main
@@ -6,10 +9,11 @@ const User = () => {
     bg-white-alt-color dark:bg-black-alt-color px-6 py-8 lg:px-12"
     >
       <UserAccount />
+      <GridLayout>
+        <UserStats />
+      </GridLayout>
     </main>
   );
 };
 
 export default User;
-
-// grid grid-cols-[77px_1fr] md:grid-cols-[117px_1fr]
