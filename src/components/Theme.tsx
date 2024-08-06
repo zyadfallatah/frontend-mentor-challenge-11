@@ -31,7 +31,9 @@ const Theme = () => {
 
   return (
     <div onClick={handleThemeMode} className=" flex items-center gap-3">
-      <h2>{isDarkMode ? "LIGHT" : "DARK"}</h2>
+      <h2 className="text-black-color dark:text-white-color font-bold tracking-[2.5px]">
+        {isDarkMode ? "LIGHT" : "DARK"}
+      </h2>
       <img src={isDarkMode ? sun : moon} alt="" />
     </div>
   );
