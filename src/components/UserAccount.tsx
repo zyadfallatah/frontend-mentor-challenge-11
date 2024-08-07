@@ -1,16 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
-import { getUser } from "../services/githubApi";
+import { UsernameSchema } from "../services/githubApi";
 import GridLayout from "../layout/GridLayout";
 import UserAccountInfo from "./UserAccountInfo";
 
-const UserAccount = () => {
-  const { data: user, isLoading } = useQuery({
-    queryKey: ["username"],
-    queryFn: () => getUser("octocat"),
-  });
-
-  if (isLoading) return <h1>Loading...</h1>;
-
+const UserAccount = ({ user }: { user: UsernameSchema }) => {
   return (
     <>
       <img
@@ -18,7 +10,7 @@ const UserAccount = () => {
         alt="user profile image"
         className="block size-[4.375rem] rounded-full md:size-[7.3125rem]"
       />
-      <UserAccountInfo />
+      <UserAccountInfo user={user} />
 
       <GridLayout>
         <p className="lg:hidden mt-8 md:mt-6 text-blueish-gray-color col-start-1 col-end-3 lg:col-start-2 dark:text-white-alt-color">

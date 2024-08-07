@@ -1,13 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
-import { getUser } from "../services/githubApi";
+import { UsernameSchema } from "../services/githubApi";
 
-const UserAccountInfo = () => {
-  const { data: user, isLoading } = useQuery({
-    queryKey: ["username"],
-    queryFn: () => getUser("octocat"),
-  });
-
-  if (isLoading) return <h1>Loading...</h1>;
+const UserAccountInfo = ({ user }: { user: UsernameSchema }) => {
   return (
     <div className="lg:flex justify-between flex-wrap h-fit">
       <div>

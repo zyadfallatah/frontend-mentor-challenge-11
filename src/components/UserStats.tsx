@@ -1,12 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
-import { getUser } from "../services/githubApi";
+import { UsernameSchema } from "../services/githubApi";
 
-const UserStats = () => {
-  const { data: user } = useQuery({
-    queryKey: ["username"],
-    queryFn: () => getUser("octocat"),
-  });
-
+const UserStats = ({ user }: { user: UsernameSchema }) => {
   return (
     <div
       className="flex justify-between mt-6 text-center md:text-left px-4 md:px-8 py-[1.125rem] bg-white-color dark:bg-black-color 

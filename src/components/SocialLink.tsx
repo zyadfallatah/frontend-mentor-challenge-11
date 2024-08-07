@@ -8,7 +8,7 @@ const SocialLink = ({
   return (
     <a
       href="#"
-      className={`flex items-center gap-5 ${
+      className={`flex items-center gap-5 break-words ${
         isLinkProvided
           ? "text-blueish-gray-color dark:text-white-alt-color"
           : "text-gray-color"

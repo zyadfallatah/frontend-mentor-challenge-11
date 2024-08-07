@@ -1,19 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
-import { getUser } from "../services/githubApi";
+import { UsernameSchema } from "../services/githubApi";
 import SocialLink from "./SocialLink";
 
 const isLinkDefined = function (link?: string) {
   return link ? "fill-[#4b6a9b] dark:fill-white" : "fill-[#697c9b]";
 };
 
-const SocialLinks = () => {
-  const { data: user, isLoading } = useQuery({
-    queryKey: ["username"],
-    queryFn: () => getUser("octocat"),
-  });
-
-  if (isLoading) return <h1>Loading...</h1>;
-
+const SocialLinks = ({ user }: { user: UsernameSchema }) => {
   return (
     <div className="grid md:grid-cols-2 mt-6 gap-4 md:gap-x-12">
       <SocialLink linkName={user?.location}>
