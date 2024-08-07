@@ -1,4 +1,5 @@
 import GridLayout from "../layout/GridLayout";
+import SocialLinks from "./SocialLinks";
 import UserAccount from "./UserAccount";
 import UserStats from "./UserStats";
 
@@ -11,6 +12,7 @@ const User = () => {
       <UserAccount />
       <GridLayout>
         <UserStats />
+        <SocialLinks />
       </GridLayout>
     </main>
   );
