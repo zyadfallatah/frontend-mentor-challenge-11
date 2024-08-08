@@ -5,11 +5,14 @@ import { getUser } from "../services/githubApi";
 
 const SearchInput = () => {
   const { setUsername } = useContext(SearchContext);
+
   const [search, setSearch] = useState("");
   const [isUsernameFound, setIsUsernameFound] = useState(true);
 
   const handleSubmit = async function (e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (search === "") return;
+
     try {
       await getUser(search).then(() => {
         setIsUsernameFound(true);
@@ -35,7 +38,7 @@ const SearchInput = () => {
         onChange={(e) => setSearch(e.currentTarget.value)}
       />
       {!isUsernameFound && (
-        <p className="text-[#F74646] text-[15px] font-bold w-fit basis-[60%]">
+        <p className="text-[#F74646] text-[15px] text-right font-bold w-fit basis-[60%]">
           No Results
         </p>
       )}
