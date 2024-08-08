@@ -1,7 +1,7 @@
 import { UsernameSchema } from "../services/githubApi";
 import SocialLink from "./SocialLink";
 
-const isLinkDefined = function (link?: string) {
+const isLinkDefined = function (link?: string | null) {
   return link ? "fill-[#4b6a9b] dark:fill-white" : "fill-[#697c9b]";
 };
 

@@ -25,6 +25,7 @@ const Theme = () => {
     }
 
     localStorage.setItem(THEME, JSON.stringify(true));
+    document.body.classList.add(THEME);
   }, []);
 
   return (

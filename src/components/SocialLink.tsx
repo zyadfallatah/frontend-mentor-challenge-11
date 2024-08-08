@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react";
 const SocialLink = ({
   children,
   linkName,
-}: PropsWithChildren & { linkName?: string }) => {
+}: PropsWithChildren & { linkName?: string | null }) => {
   const isLinkProvided = linkName !== null;
   return (
     <a
