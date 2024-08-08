@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { SearchContext } from "../App";
 import { getUser } from "../services/githubApi";
@@ -12,21 +12,28 @@ const User = () => {
 
   const {
     data: user,
-    isLoading,
     isError,
+    isLoading,
+    isPlaceholderData,
   } = useQuery({
     queryKey: ["username", { username }],
     queryFn: () => getUser(username),
+    placeholderData: keepPreviousData,
   });
 
   if (isLoading)
     return (
-      <h1 className=" dark:text-white-alt-color text-center mt-10">
+      <h2 className="text-black-color dark:text-white-alt-color text-3xl mt-8 text-center">
         Loading...
-      </h1>
+      </h2>
     );
 
-  if (isError) return <h2>Error</h2>;
+  if (isError)
+    return (
+      <h2 className="text-black-color dark:text-white-alt-color text-3xl mt-8 text-center">
+        User Not Found 😢
+      </h2>
+    );
 
   return (
     <main
@@ -37,6 +44,11 @@ const User = () => {
       <GridLayout>
         <UserStats user={user!} />
         <SocialLinks user={user!} />
+        {isPlaceholderData ? (
+          <h2 className="text-black-color dark:text-white-alt-color text-xl mt-8 text-center">
+            New User Fetching...
+          </h2>
+        ) : null}
       </GridLayout>
     </main>
   );

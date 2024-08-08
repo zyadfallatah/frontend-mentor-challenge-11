@@ -28,5 +28,6 @@ export const getUser = async function (username: string) {
       "X-GitHub-Api-Version": "2022-11-28",
     },
   });
+
   return response.data;
 };
