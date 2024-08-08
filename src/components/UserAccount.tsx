@@ -14,7 +14,7 @@ const UserAccount = ({ user }: { user: UsernameSchema }) => {
 
       <GridLayout>
         <p className="lg:hidden mt-8 md:mt-6 text-blueish-gray-color col-start-1 col-end-3 lg:col-start-2 dark:text-white-alt-color">
-          {user?.bio ? user.bio : "No Bio Here"}
+          {user?.bio ? user.bio : "This profile has no bio"}
         </p>
       </GridLayout>
     </>

@@ -18,7 +18,7 @@ const UserAccountInfo = ({ user }: { user: UsernameSchema }) => {
         {getDate}
       </p>
       <p className="hidden lg:block basis-full text-blueish-gray-color dark:text-white-alt-color">
-        {user?.bio ? user.bio : "No Bio Here"}
+        {user?.bio ? user.bio : "This profile has no bio"}
       </p>
     </div>
   );
