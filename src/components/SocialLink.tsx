@@ -10,7 +10,7 @@ const SocialLink = ({
       href="#"
       className={`flex items-center gap-5 ${
         isLinkProvided
-          ? "text-blueish-gray-color dark:text-white-alt-color"
+          ? "text-blueish-gray-color dark:text-white-alt-color hover:underline"
           : "text-gray-color"
       }`}
     >

@@ -7,7 +7,6 @@ import { useQuery } from "@tanstack/react-query";
 const SearchInput = () => {
   const { username, setUsername } = useContext(SearchContext);
   const [search, setSearch] = useState("");
-  // const [isUsernameFound, setIsUsernameFound] = useState(true);
 
   const handleSubmit = async function (e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -43,7 +42,8 @@ const SearchInput = () => {
       <input
         type="submit"
         value="Search"
-        className="text-sm text-white-alt-color font-bold bg-blue-color px-4 py-3 rounded-[10px]"
+        className="text-sm text-white-alt-color font-bold bg-blue-color px-4 py-3 rounded-[10px] 
+        duration-100 cursor-pointer hover:bg-[#60ABFF]"
       />
     </form>
   );

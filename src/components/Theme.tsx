@@ -29,11 +29,14 @@ const Theme = () => {
   }, []);
 
   return (
-    <div onClick={handleThemeMode} className=" flex items-center gap-3">
+    <div
+      onClick={handleThemeMode}
+      className="flex items-center gap-3 cursor-pointer hover:opacity-60 duration-100"
+    >
       <h2 className="text-black-color dark:text-white-color font-bold tracking-[2.5px]">
         {isDarkMode ? "LIGHT" : "DARK"}
       </h2>
-      <img src={isDarkMode ? sun : moon} alt="" />
+      <img src={isDarkMode ? sun : moon} alt="Theme image" />
     </div>
   );
 };

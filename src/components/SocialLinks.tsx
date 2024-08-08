@@ -7,7 +7,7 @@ const isLinkDefined = function (link?: string | null) {
 
 const SocialLinks = ({ user }: { user: UsernameSchema }) => {
   return (
-    <div className="grid md:grid-cols-2 mt-6 gap-4 md:gap-x-12">
+    <div className="grid md:grid-cols-2 mt-6 gap-4 md:gap-x-6">
       <SocialLink linkName={user?.location}>
         <svg height="20" width="14" xmlns="http://www.w3.org/2000/svg">
           <path
