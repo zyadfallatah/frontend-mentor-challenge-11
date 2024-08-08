@@ -46,7 +46,5 @@ jobs:
           # Upload dist folder
           path: './dist'
       - name: Deploy to GitHub Pages
-      - env:
-          VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
         id: deployment
         uses: actions/deploy-pages@v4
