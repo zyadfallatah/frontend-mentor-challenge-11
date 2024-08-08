@@ -4,7 +4,7 @@ export type UsernameSchema =
   | {
       avatar_url: string;
       login: string;
-      created_at: string; // "2011-01-25T18:44:36Z"
+      created_at: string;
       public_repos: number;
       following: number;
       followers: number;
@@ -28,6 +28,5 @@ export const getUser = async function (username: string) {
       "X-GitHub-Api-Version": "2022-11-28",
     },
   });
-
   return response.data;
 };

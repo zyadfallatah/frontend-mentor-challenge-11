@@ -1,6 +1,9 @@
 import { UsernameSchema } from "../services/githubApi";
+import { dateFormat } from "../util/dateFormatter";
 
 const UserAccountInfo = ({ user }: { user: UsernameSchema }) => {
+  const getDate = dateFormat(user?.created_at as string);
+
   return (
     <div className="lg:flex justify-between flex-wrap h-fit">
       <div>
@@ -12,7 +15,7 @@ const UserAccountInfo = ({ user }: { user: UsernameSchema }) => {
         </h3>
       </div>
       <p className="text-gray-color dark:text-white-alt-color text-[15px]">
-        Joined 25 Jan 2011
+        {getDate}
       </p>
       <p className="hidden lg:block basis-full text-blueish-gray-color dark:text-white-alt-color">
         {user?.bio ? user.bio : "No Bio Here"}
