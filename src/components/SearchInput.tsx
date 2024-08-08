@@ -28,7 +28,7 @@ const SearchInput = () => {
     >
       <img src={searchIcon} alt="search Icon" className="md:pl-6" />
       <input
-        className="w-full bg-transparent text-[13px] placeholder:text-gray-color placeholder:dark:text-white-alt-color outline-0"
+        className="w-full bg-transparent text-[13px] lg:text-[18px] placeholder:text-gray-color placeholder:dark:text-white-alt-color outline-0"
         type="text"
         placeholder="Search GitHub username…"
         value={search}
@@ -42,7 +42,7 @@ const SearchInput = () => {
       <input
         type="submit"
         value="Search"
-        className="text-sm text-white-alt-color font-bold bg-blue-color px-4 py-3 rounded-[10px] 
+        className="text-sm lg:text-[1rem] text-white-alt-color font-bold bg-blue-color px-4 py-3 lg:px-6 rounded-[10px] 
         duration-100 cursor-pointer hover:bg-[#60ABFF]"
       />
     </form>

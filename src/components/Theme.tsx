@@ -33,7 +33,7 @@ const Theme = () => {
       onClick={handleThemeMode}
       className="flex items-center gap-3 cursor-pointer hover:opacity-60 duration-100"
     >
-      <h2 className="text-black-color dark:text-white-color font-bold tracking-[2.5px]">
+      <h2 className="text-black-color dark:text-white-color font-bold tracking-[2.5px] text-[13px]">
         {isDarkMode ? "LIGHT" : "DARK"}
       </h2>
       <img src={isDarkMode ? sun : moon} alt="Theme image" />
